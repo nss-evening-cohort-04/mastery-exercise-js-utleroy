@@ -1,25 +1,17 @@
-var userNum = document.getElementById("number");
+var userNum = document.getElementById("height");
 var userChar = document.getElementById("character");
 var button = document.getElementById("grow")
-
+// var treeSize = {
+//     number: userNum,
+//     character: userChar
+// };
 button.addEventListener("click", growTree)
 
 
-var obj = {
-    number: userNum,
-    character: userChar
-};
 
 
-
-// var treeSize = {
-// tall: userNum = "",
-// char: userChar = ""
-// }
-
-// console.log(treeSize)
 
 function growTree() {
-  var display = userChar.value
+  var display = userNum.value + userChar.value
   console.log(display)
 }
