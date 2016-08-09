@@ -26,12 +26,12 @@ function treeDisplay() {
     var wide = (i * 2) + 1;
     var whitespace = (incrementRows - wide) / 2;
     for (var j = 0; j < whitespace; j++) {
-      waterIt += "&nbsp;"
+      waterIt += " &nbsp;"
     }
     for (var k = 0; k < wide; k++) {
       waterIt += treeObj.character
     }
-    waterIt += "<p>"
+    waterIt += "</p>"
   }
   output.innerHTML = waterIt;
 }
