@@ -1,9 +1,18 @@
 var button = document.getElementById("grow")
 var output = document.getElementById("output")
-var waterIt = "";
+
 
 button.addEventListener("click", userInputForTree)
 
+document.addEventListener("keydown", treeDisplay);
+
+function checkForProperFormat() {
+  if(!treeObj.height || !treeObj.character) {
+    alert("Both input fields need a value!");
+  } else {
+    treeDisplay();
+  }
+}
 /*this function is used to get the initial user input to display in the console*/
 function userInputForTree() {
   treeObj.height = document.getElementById("height").value;
@@ -11,16 +20,11 @@ function userInputForTree() {
   checkForProperFormat();
 }
 
-function enterKeyPressed (keyPress) {
-  if (keyPress.which === 13) {
-    treeDisplay();
-  }
-}
-document.addEventListener("keydown", enterKeyPressed);
 
 var treeObj = {};
 
 function treeDisplay() {
+  var waterIt = "";
   var incrementRows = (2*treeObj.height) - 1;
   for (var i = 0; i < treeObj.height; i++) {
     var wide = (i * 2) + 1;
@@ -36,10 +40,8 @@ function treeDisplay() {
   output.innerHTML = waterIt;
 }
 
-function checkForProperFormat() {
-  if(!treeObj.height || !treeObj.character) {
-    alert("Please read the instructions!!");
-  } else {
+function enterKeyPressed (keyPress) {
+  if (keyPress.which === 13) {
     treeDisplay();
   }
 }
