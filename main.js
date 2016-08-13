@@ -16,20 +16,12 @@ function userInputForTree() {
 
 /*checking that each input field has a value*/
 function checkForProperFormat(rows, width) {
+  var treeObj = {char: width, tall: rows,};
   if(!rows || !width) {
     alert("Both input fields need a value!");
   } else {
-    buildTree(rows, width);
+    treeDisplay(treeObj);;
   }
-}
-
-/*function for building the tree from the user input. Then calls the treeDisplay function*/
-function buildTree(rows, width) {
-var treeObj = {
-  char: width,
-  tall: rows
-};
-  treeDisplay(treeObj);
 }
 
 /*function for displaying the tree after it runs through the buildTree function*/
